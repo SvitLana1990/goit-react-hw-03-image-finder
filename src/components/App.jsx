@@ -1,16 +1,19 @@
+import { GlobalStyle } from "GlobalStyle";
+import { PictureSearchBar } from "./Searchbar/Searchbar";
+import { GalleryList } from "./ImageGallery/ImageGallery.styled";
+import { LoadMoreButton } from "./Button/Button";
+import { ImageLoader } from "./Loader/Loader";
+import { Container } from "./App.styled";
+
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Container>
+      <PictureSearchBar />
+      <ImageLoader/>
+      <GalleryList />
+      <LoadMoreButton/>
+    <GlobalStyle />
+  </Container>
   );
 };
