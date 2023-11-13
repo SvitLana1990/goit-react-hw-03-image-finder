@@ -41,17 +41,16 @@ export class App extends Component {
     try {
       this.setState({ isLoading: true, error: false });
 
-      if (this.state.valueSearch) {
+      if (this.state.valueSearch.trim() !== "") {
         const initialImages = await apiFetchImages(
-          this.state.valueSearch,
-          this.state.page,
-        );
+      this.state.valueSearch,
+      this.state.page,
+      );
         this.setState({
           images: initialImages,
         });
       }
     } catch (error) {
-  console.error('Error fetching images:', error);
   toast.error('Oops! Something went wrong! Try reloading the page!')
   this.setState({ error: true });
 } finally {
@@ -74,7 +73,6 @@ export class App extends Component {
         }));
         }
       } catch (error) {
-  console.error('Error fetching images:', error);
   toast.error('Oops! Something went wrong! Try reloading the page!')
   this.setState({ error: true });
 } finally {

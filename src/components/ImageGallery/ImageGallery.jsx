@@ -3,9 +3,6 @@ import { GalleryList } from "./ImageGallery.styled";
 
 
 export const List = ({ images }) => {
-    if (images.length === 0) {
-    return <p>No images available. Please try another search!</p>;
-  }
     return (
     <GalleryList>
       {images.map(image => {
@@ -13,8 +10,8 @@ export const List = ({ images }) => {
           <GalleryItem
             key={image.id}
             img={image.webformatURL}
-                largeImg={image.largeImageURL}
-                tag={image.tags}
+            largeImg={image.largeImageURL}
+            tag={image.tags}
           />
         );
       })}
